@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/944d189c85.js" crossorigin="anonymous"></script>
+    <title>AI Image Generator</title>
+</head>
+<body class="dark-theme">
+    <div class="logo">
+        <span>PIXEL-GenAi</span>
+    </div>
+
+    <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <div class="hero-section">
+        <h1 class="main-title">AI Image Generator</h1>
+        <p class="subtitle">Transform your imagination into stunning visuals</p>
+        <div class="features">
+            <div class="feature-item">
+                <i class="fas fa-wand-magic-sparkles"></i>
+                <span>Advanced AI Models</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-palette"></i>
+                <span>High Quality Results</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Settings</h2>
+            <div class="settings-group">
+                <label for="model-select">
+                    <i class="fas fa-robot"></i>
+                    Select AI Model
+                </label>
+                <div class="select-wrapper">
+                    <select id="model-select">
+                        <option value="stabilityai/stable-diffusion-xl-base-1.0">Stable Diffusion XL</option>
+                        <option value="prompthero/openjourney">OpenJourney</option>
+                        <option value="ruwnayml/stable-diffusion-v1-5">stable-diffusion-v1-5</option>
+                        <option value="stabilityai/stable-diffusion-3.5-large">Stable Diffusion 3.5</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            
+            <div class="settings-group">
+                <label for="image-count">
+                    <i class="fas fa-images"></i>
+                    Number of Images
+                </label>
+                <div class="image-count-selector">
+                    <select id="image-count">
+                        <option value="1">1 Image</option>
+                        <option value="2">2 Images</option>
+                        <option value="3">3 Images</option>
+                        <option value="4" selected>4 Images</option>
+                        <option value="5">5 Images</option>
+                        <option value="6">6 Images</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="prompt-container">
+                <textarea id="user-prompt" placeholder="Describe what you want to see... Be detailed and specific."></textarea>
+                <button type="button" id="generate">Generate</button>
+            </div>
+
+            <div class="result">
+                <div id="loading">
+                    <div class="spinner"></div>
+                    <span>Creating your prompt...</span>
+                </div>
+                <div id="image-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ismail-shaikh-19798a335/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> ismailpromt2i@gamil.com</p>
+                    <p><i class="fas fa-phone"></i> +91 77198 77580</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <p class="copyright">© 2024 PIXEL-GenAi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
