@@ -1,4 +1,4 @@
-const apiKey = "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";
+const apiKey = "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";
 
 // Get DOM elements
 const generateBtn = document.getElementById("generate");
@@ -71,7 +71,7 @@ async function generateImages(input) {
         
         for (let i = 0; i < responses.length; i++) {
             if (!responses[i].ok) {
-                throw new Error(`Failed to generate image ${i + 1}`);
+                throw new Error(`Failed to generate image ! Try another Model ${i + 1}`);
             }
             
             const blob = await responses[i].blob();
