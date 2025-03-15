@@ -1,6 +1,5 @@
-const apiKey = "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";
+const apiKey = "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";
 
-// Get DOM elements
 const generateBtn = document.getElementById("generate");
 const modelSelect = document.getElementById("model-select");
 const imageCountInput = document.getElementById("image-count");
@@ -10,7 +9,6 @@ const imageGrid = document.getElementById("image-grid");
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 
-// Check for saved theme preference or default to light theme
 const savedTheme = localStorage.getItem('theme') || 'light';
 document.body.className = `${savedTheme}-theme`;
 updateThemeIcon(savedTheme);
@@ -32,7 +30,6 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Function to generate images
 async function generateImages(input) {
     const selectedModel = modelSelect.value;
     const imageCount = parseInt(imageCountInput.value);
@@ -71,23 +68,20 @@ async function generateImages(input) {
         
         for (let i = 0; i < responses.length; i++) {
             if (!responses[i].ok) {
-                throw new Error(`Failed to generate image ${i + 1}`);
+                throw new Error(`Failed to generate image ! Try another Model ${i + 1}`);
             }
             
             const blob = await responses[i].blob();
             const imgUrl = URL.createObjectURL(blob);
             
-            // Create wrapper div
             const wrapper = document.createElement("div");
             wrapper.className = "image-wrapper";
             
-            // Create and add image
             const img = document.createElement("img");
             img.src = imgUrl;
             img.alt = `Generated image ${i + 1}`;
             wrapper.appendChild(img);
             
-            // Create and add download button
             const downloadBtn = document.createElement("button");
             downloadBtn.className = "download-btn";
             downloadBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download';
@@ -107,7 +101,6 @@ async function generateImages(input) {
     }
 }
 
-// Event listeners
 generateBtn.addEventListener('click', () => {
     generateImages(userPrompt.value);
 });
@@ -118,22 +111,18 @@ userPrompt.addEventListener('keydown', (e) => {
     }
 });
 
-// Function to generate a random number between min and max (inclusive)
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Function to disable the generate button during processing
 function disableGenerateButton() {
     generateBtn.disabled = true;
 }
 
-// Function to enable the generate button after process
 function enableGenerateButton() {
     generateBtn.disabled = false;
 }
 
-// Function to clear image grid
 function clearImageGrid() {
     imageGrid.innerHTML = "";
 }
