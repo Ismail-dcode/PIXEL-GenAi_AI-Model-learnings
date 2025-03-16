@@ -41,6 +41,12 @@ Javascript, HTML, CSS | API Integration | Gen-AI Concept | AI MODELS | Image-Gen
 
 
 
+## API REFERANCE
+
+HUGGING FACE API  : 
+https://huggingface.co/models)/
+
+
 ## Demo
 
 VISIT HERE : 
