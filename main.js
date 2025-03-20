@@ -1,4 +1,4 @@
-const apiKey = "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";
+const apiKey = "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";
 
 const generateBtn = document.getElementById("generate");
 const modelSelect = document.getElementById("model-select");
@@ -51,7 +51,7 @@ async function generateImages(input) {
             const prompt = `${input} ${randomNumber}`;
             
             const promise = fetch(
-                `https://api-inference.huggingface.co/models/${selectedModel}`,
+                `https://router.huggingface.co/hf-inference/models/${selectedModel}`,
                 {
                     method: "POST",
                     headers: {
