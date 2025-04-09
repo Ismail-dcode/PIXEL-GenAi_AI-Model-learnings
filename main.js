@@ -51,7 +51,7 @@ async function generateImages(input) {
             const prompt = `${input} ${randomNumber}`;
             
             const promise = fetch(
-                `https://router.huggingface.co/replicate/v1/models/${selectedModel}`,
+                `https://router.huggingface.co/hf-inference/models/${selectedModel}`,
                 {
                     method: "POST",
                     headers: {
