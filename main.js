@@ -1,4 +1,4 @@
-const apiKey = "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";
+const apiKey = "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";
 
 const generateBtn = document.getElementById("generate");
 const modelSelect = document.getElementById("model-select");
